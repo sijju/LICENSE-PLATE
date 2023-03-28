@@ -9,6 +9,7 @@ import Login from './Login';
 const Onboard = () => {
     const navigation = useNavigation()
     useEffect(()=>{
+        handleSignout()
          auth.onAuthStateChanged(()=>{
         
         navigation.navigate(Login)
@@ -23,15 +24,7 @@ const Onboard = () => {
            
         }).catch(err =>alert(err.message));
      }
-  return (
-    
-    <View style={styles.container}>
-       <Text>You Want To Logout?</Text> 
-        <TouchableOpacity onPress={handleSignout} style={styles.button}>
-            <Text>LogOut</Text>
-        </TouchableOpacity>
-    </View>
-  )
+  
 }
 
 export default Onboard
